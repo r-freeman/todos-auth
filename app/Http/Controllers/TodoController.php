@@ -110,6 +110,11 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Delete the Todo
+        $todo = Todo::findOrFail($id);
+        $todo->delete();
+        return redirect()
+            ->route('todos.index')
+            ->with('status', 'Deleted the selected Todo!');
     }
 }
