@@ -21,4 +21,4 @@ Route::delete('/todos/{id}', 'TodoController@destroy')->name('todos.destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
