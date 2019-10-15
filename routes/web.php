@@ -22,3 +22,6 @@ Route::delete('/todos/{id}', 'TodoController@destroy')->name('todos.destroy');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+Route::put('/profile', 'ProfileController@update')->name('profile.update');
